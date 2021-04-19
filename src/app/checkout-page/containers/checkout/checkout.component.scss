@@ -36,6 +36,7 @@ main {
         font: 600 12px "Montserrat", sans-serif;
         color: $light-black;
         margin-left: 10px;
+        padding-bottom: 5px;
       }
 
       .input-icon-container {
@@ -69,7 +70,7 @@ main {
         }
 
         .isPostal {
-          margin-top: -80px;
+          margin-top: -85px;
           margin-left: 245px;
 
           input {
@@ -136,6 +137,7 @@ main {
 
 .select {
   width: 217px;
+  height: 56px;
   margin-top: -20px;
   margin-left: 10px;
 
