@@ -1,0 +1,46 @@
+<aside class="checkout-container">
+  <div class="item">
+    <div class="item-wrapper">
+      <img src="assets/images/photo1.png" loading="lazy" alt="Vintage Backbag" title="Vintage Backbag" />
+      <div class="item-data">
+        <span class="item-name">Vintage Backbag</span>
+        <div class="item-prices">
+          <span class="item-marked-down-price">$54.99</span>&nbsp;&nbsp;
+          <span class="item-original-cost">$94.99</span>
+        </div>
+        <div class="item-adjuster">
+          <span class="material-icons" (click)="removeBackbag()">remove_circle</span>
+          <span class="item-quantity">{{ backbags.length }}</span>
+          <span class="material-icons" (click)="addBackbag()">add_circle</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-wrapper">
+      <img src="assets/images/photo2.png" loading="lazy" alt="Levi Shoes" title="Levi Shoes" />
+      <div class="item-data">
+        <span class="item-name">Levi Shoes</span>
+        <div class="item-prices">
+          <span class="item-marked-down-price">$74.99</span>&nbsp;&nbsp;
+          <span class="item-original-cost">$124.99</span>
+        </div>
+        <div class="item-adjuster">
+          <span class="material-icons" (click)="removeShoes()">remove_circle</span>
+          <span class="item-quantity">{{ shoes.length }}</span>
+          <span class="material-icons" (click)="addShoes()">add_circle</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="checkout-field">
+    <div class="shipping">
+      <span class="shipping-text">Shipping</span>
+      <span class="shipping-cost">${{ shippingPrice }}</span>
+    </div>
+    <div class="total">
+      <span class="total-text">Total</span>
+      <span class="total-cost">${{ totalCost() }}</span>
+    </div>
+  </div>
+</aside>

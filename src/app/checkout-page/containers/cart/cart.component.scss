@@ -1,0 +1,140 @@
+@import "../../styles/_variables";
+
+.checkout-container {
+  background-color: $off-white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 383px;
+  height: fit-content;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+
+      img {
+        width: 176px;
+        height: 136px;
+        border-radius: 12px;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+
+      .item-data {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+
+        .item-name {
+          font: 600 16px "Montserrat", sans-serif;
+          color: $cape-cod;
+          width: 300px;
+        }
+
+        .item-prices {
+          clear: both;
+          display: flex;
+          width: 250px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        .item-marked-down-price {
+          font: 600 16px "Montserrat", sans-serif;
+          color: $orange;
+          display: flex;
+          margin-right: 15px;
+        }
+
+        .item-original-cost {
+          font: 600 12px "Montserrat", sans-serif;
+          color: $cape-cod;
+          text-decoration-line: line-through;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .item-adjuster {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid $dark-charcoal;
+        border-radius: 8px;
+        width: 125px;
+        padding: 10px;
+        margin-top: 25px;
+
+        .item-quantity {
+          font: 600 16px "Montserrat", sans-serif;
+          color: $gray-black;
+        }
+      }
+
+      .material-icons {
+        color: $medium-gray;
+
+        &:active {
+          color: $medium-gray;
+        }
+        &:hover {
+          color: $dark-gray;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .checkout-field, .total {
+    border-top: 2px solid $light-gray;
+    font-weight: 500;
+    width: 100%;
+    margin-top: 8px;
+    padding: 4px;
+  }
+
+  .checkout-field {
+    margin-top: 70px;
+    padding: 5px;
+
+    .shipping, .total {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .shipping {
+      margin-top: 5px;
+
+      &-text, &-cost {
+        color: $gray-black;
+      }
+
+      &-text {
+        font: 600 18px "Montserrat", sans-serif;
+      }
+      &-cost {
+        font: 600 14px "Montserrat", sans-serif;
+      }
+    }
+    .total {
+      clear: both;
+      margin-top: 10px;
+
+      &-text, &-cost {
+        color: $gray-black;
+      }
+
+      &-text {
+        font: 600 18px "Montserrat", sans-serif;
+      }
+      &-cost {
+        font: 600 14px "Montserrat", sans-serif;
+      }
+    }
+  }
+}

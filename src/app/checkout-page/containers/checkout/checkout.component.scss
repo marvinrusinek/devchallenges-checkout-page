@@ -1,0 +1,203 @@
+@import "../../styles/_variables";
+
+main {
+  header {
+    grid-area: header;
+
+    h1 {
+      font: 600 36px "Montserrat", sans-serif;
+      color: $cape-cod;
+      margin: 64px 0 40px 250px;
+    }
+  }
+
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 240px;
+  }
+
+  .checkout-form {
+    grid-area: form;
+
+    h3 {
+      font: 600 18px "Montserrat", sans-serif;
+      color: $gray-black;
+      margin-left: 10px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+      position: relative;
+
+      label {
+        font: 600 12px "Montserrat", sans-serif;
+        color: $light-black;
+        margin-left: 10px;
+      }
+
+      .input-icon-container {
+        display: flex;
+
+        .material-icons {
+          position: relative;
+          top: 15px;
+          left: 20px;
+          color: $light-black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+        }
+
+        input {
+          font: 600 16px "Montserrat", sans-serif;
+          color: $battleship-gray;
+          text-indent: 30px;
+          border: 1px solid $battleship-gray;
+          border-radius: 12px;
+          width: 465px;
+          height: 56px;
+          margin-left: -15px;
+
+          &:focus, &:active {
+            font: 600 16px "Montserrat", sans-serif;
+            color: $gray-black;
+          }
+        }
+
+        .isPostal {
+          margin-top: -90px;
+          margin-left: 245px;
+
+          input {
+            width: 217px;
+          }
+        }
+
+        .postal-icon {
+          position: relative;
+          top: -75px;
+          left: 265px;
+        }
+      }
+    }
+
+    .shipping-address {
+      margin-top: 40px;
+    }
+
+    .save-info {
+      display: flex;
+      flex-direction: row;
+      margin-left: 15px;
+
+      span {
+        font: 600 12px "Montserrat", sans-serif;
+        color: $light-black;
+        margin-left: 5px;
+      }
+    }
+
+    button {
+      clear: both;
+      font: 600 16px "Montserrat", sans-serif;
+      color: $white;
+      background-color: $orange;
+      transition-property: color, background-color;
+      transition-duration: 0.5s, 0.5s;
+      transition-delay: 0s;
+      transition-timing-function: ease-in;
+      border-radius: 12px;
+      width: 166px;
+      height: 54px;
+      float: right;
+      margin-top: 30px;
+
+      &:active {
+        background-color: $orange;
+      }
+
+      &:hover {
+        background-color: $bright-orange;
+        cursor: pointer;
+      }
+    }
+
+    .form-error {
+      margin-left: 15px;
+      font-weight: bold;
+    }
+  }
+}
+
+.select {
+  width: 217px;
+  margin-top: -20px;
+  margin-left: 10px;
+
+  .material-icons {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    color: $light-black;
+  }
+
+  select {
+    font: 600 16px "Montserrat", sans-serif;
+    color: $battleship-gray;
+    text-indent: 30px;
+    border: 1px solid $battleship-gray;
+    border-radius: 12px;
+    height: 56px;
+
+    &:focus, &:active {
+      font: 600 16px "Montserrat", sans-serif;
+      color: $gray-black;
+    }
+  }
+}
+
+.move-postal {
+  position: relative;
+  top: -90px;
+  left: 250px;
+}
+
+.cart {
+  grid-area: cart;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+
+@media only screen and (max-width: 650px) {
+  main {
+    header {
+      h1 {
+        font: 600 24px "Montserrat", sans-serif;
+        margin-left: 30px;
+      }
+    }
+
+    .main-container {
+      margin: -70px 10px 0 10px;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 0.2fr 2fr 2.5fr auto;
+      grid-template-areas:
+        "header"
+        "cart"
+        "form"
+        "footer";
+
+      .checkout-form {
+        margin-top: -35px;
+      }
+    }
+  }
+}

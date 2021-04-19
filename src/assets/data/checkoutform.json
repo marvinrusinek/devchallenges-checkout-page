@@ -1,0 +1,72 @@
+[
+  {
+    "inputCategory": "contactInfo",
+    "inputName": "E-mail",
+    "inputType": "input",
+    "type": "text",
+    "inputClass": "email",
+    "icon": "email",
+    "formControl": "email",
+    "placeholderText": "Enter your email..."
+  },
+  {
+    "inputCategory": "contactInfo",
+    "inputName": "Phone",
+    "inputType": "input",
+    "type": "tel",
+    "inputClass": "phone",
+    "icon": "phone",
+    "formControl": "phone",
+    "placeholderText": "Enter your phone..."
+  },
+  {
+    "inputCategory": "shippingAddress",
+    "inputName": "Full name",
+    "inputType": "input",
+    "type": "text",
+    "inputClass": "name",
+    "icon": "person",
+    "formControl": "name",
+    "placeholderText": "Your name..."
+  },
+  {
+    "inputCategory": "shippingAddress",
+    "inputName": "Address",
+    "inputType": "input",
+    "type": "text",
+    "inputClass": "address",
+    "icon": "home",
+    "formControl": "address",
+    "placeholderText": "Your address..."
+  },
+  {
+    "inputCategory": "shippingAddress",
+    "inputName": "City",
+    "inputType": "input",
+    "type": "text",
+    "inputClass": "city",
+    "icon": "location_city",
+    "formControl": "city",
+    "placeholderText": "Your city..."
+  },
+  {
+    "inputCategory": "shippingAddress",
+    "inputName": "Country",
+    "inputType": "select",
+    "type": "text",
+    "inputClass": "country",
+    "icon": "public",
+    "formControl": "country",
+    "placeholderText": "Your country..."
+  },
+  {
+    "inputCategory": "shippingAddress",
+    "inputName": "Postal code",
+    "inputType": "input",
+    "type": "text",
+    "inputClass": "postal",
+    "icon": "markunread_mailbox",
+    "formControl": "postalCode",
+    "placeholderText": "Your postal code..."
+  }
+]

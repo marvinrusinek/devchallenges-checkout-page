@@ -1,0 +1,114 @@
+<main>
+  <header>
+    <h1>Checkout</h1>
+  </header>
+
+  <div class="main-container">
+    <article class="checkout-form">
+      <form [formGroup]="checkoutForm" (ngSubmit)="submitForm($event)" id="checkoutForm" method="POST" novalidate>
+        <div class="contact">
+          <h3 class="contact-header">Contact information</h3>
+          <div *ngFor="let checkoutField of checkoutFormFields">
+            <div *ngIf="checkoutField.inputCategory === 'contactInfo'">
+              <div class="form-field {{checkoutField.inputClass}}">
+                <label>{{checkoutField.inputName}}</label>
+                <div class={{checkoutField.inputClass}}>
+                  <div class="input-icon-container">
+                    <span class="material-icons">{{checkoutField.icon}}</span>
+                    <div *ngIf="checkoutField.inputType === 'input'">
+                      <input type="checkoutField.type" class="form-control" aria-required="true" required
+                        [formControlName]="checkoutField.formControl" [placeholder]="checkoutField.placeholderText" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="help-block form-error text-danger small">
+                  <span *ngIf="checkoutForm.controls[checkoutField.formControl].errors?.required &&
+                               checkoutForm.controls[checkoutField.formControl].touched">
+                    {{ checkoutField.inputName }} is required.
+                  </span>
+                  <span *ngIf="checkoutField.formControl === 'email' &&
+                               checkoutForm.controls[checkoutField.formControl].errors?.pattern">
+                    Please provide a valid e-mail address.
+                  </span>
+                  <span *ngIf="checkoutField.formControl === 'phone' &&
+                               checkoutForm.controls[checkoutField.formControl].errors?.pattern">
+                    Please provide a valid 10-digit phone number.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shipping-address">
+          <h3 class="shipping-header">Shipping address</h3>
+          <div *ngFor="let checkoutField of checkoutFormFields">
+            <div *ngIf="checkoutField.inputCategory === 'shippingAddress'">
+              <div class="form-field">
+                <label [class.move-postal]="checkoutField.formControl === 'postalCode'">
+                  {{checkoutField.inputName}}
+                </label>
+                <div class={{checkoutField.inputClass}}>
+                  <div class="input-icon-container">
+                    <span class="material-icons" [class.postal-icon]="checkoutField.formControl === 'postalCode'">
+                      {{checkoutField.icon}}
+                    </span>
+                    <div *ngIf="checkoutField.inputType === 'input'"
+                         [class.isPostal]="checkoutField.formControl === 'postalCode'">
+                      <input type="checkoutField.type" class="form-control" aria-required="true" required
+                        [formControlName]="checkoutField.formControl" [placeholder]="checkoutField.placeholderText" />
+                    </div>
+                  </div>
+                  <div *ngIf="checkoutField.inputType === 'select'" class="select">
+                    <select type="checkoutField.type" class="form-control" aria-required="true" required
+                      [formControlName]="checkoutField.formControl">
+                      <option [ngValue]="null" disabled selected hidden>{{ checkoutField.placeholderText }}
+                      </option>
+                      <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="help-block form-error text-danger small">
+                  <span *ngIf="checkoutForm.controls[checkoutField.formControl].errors?.required &&
+                               checkoutForm.controls[checkoutField.formControl].touched">
+                        {{ checkoutField.inputName }} is required.
+                  </span>
+                  <span *ngIf="checkoutField.formControl === 'name' &&
+                              checkoutForm.controls[checkoutField.formControl].errors?.pattern">
+                    Please provide a valid name.
+                  </span>
+                  <span *ngIf="checkoutField.formControl === 'address' &&
+                               checkoutForm.controls[checkoutField.formControl].errors?.maxlength">
+                    Address has more than 30 characters. Please provide a valid address.
+                  </span>
+                  <span *ngIf="checkoutField.formControl === 'city' &&
+                               checkoutForm.controls[checkoutField.formControl].errors?.pattern">
+                    Please provide a valid city name.
+                  </span>
+                  <span *ngIf="checkoutField.formControl === 'country' &&
+                               checkoutForm.controls[checkoutField.formControl].errors?.pattern">
+                    Please provide a valid country.
+                  </span>
+                  <span *ngIf="checkoutField.formControl === 'postalCode' &&
+                              checkoutForm.controls[checkoutField.formControl].errors?.pattern">
+                    Please provide a valid postal code.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="save-info">
+          <input type="checkbox">&nbsp;<span>Save this information for next time</span>
+        </div>
+        <button type="submit">Continue</button>
+      </form>
+    </article>
+
+    <app-cart class="cart"></app-cart>
+  </div>
+</main>
+
+<app-footer class="footer"></app-footer>
