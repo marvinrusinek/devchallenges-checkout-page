@@ -55,7 +55,7 @@ main {
         input {
           font: 600 16px "Montserrat", sans-serif;
           color: $battleship-gray;
-          text-indent: 30px;
+          text-indent: 40px;
           border: 1px solid $battleship-gray;
           border-radius: 12px;
           width: 465px;
@@ -69,7 +69,7 @@ main {
         }
 
         .isPostal {
-          margin-top: -90px;
+          margin-top: -80px;
           margin-left: 245px;
 
           input {
@@ -79,7 +79,7 @@ main {
 
         .postal-icon {
           position: relative;
-          top: -75px;
+          top: -65px;
           left: 265px;
         }
       }
@@ -148,9 +148,10 @@ main {
   select {
     font: 600 16px "Montserrat", sans-serif;
     color: $battleship-gray;
-    text-indent: 30px;
+    text-indent: 40px;
     border: 1px solid $battleship-gray;
     border-radius: 12px;
+    width: 217px;
     height: 56px;
 
     &:focus, &:active {
@@ -162,7 +163,7 @@ main {
 
 .move-postal {
   position: relative;
-  top: -90px;
+  top: -85px;
   left: 250px;
 }
 
